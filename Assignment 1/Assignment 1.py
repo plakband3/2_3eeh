@@ -1,6 +1,8 @@
-with open("tekst.txt", "r") as my_file:
+from collections import Counter
+from string import ascii_lowercase
+
+with open('tekst.txt') as f:
+    print (Counter(letter for line in f for letter in line.lower() if letter in ascii_lowercase))
 
 
-    for line in my_file:
-        print ("hello")
-    my_file.close
+#source used : http://stackoverflow.com/questions/18647707/count-letters-in-a-text-file
